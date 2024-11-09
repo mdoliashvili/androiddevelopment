@@ -8,7 +8,4 @@
         android:color="#252424">
 
     </stroke>
-    <gradient android:color="#FFFFFF"
-            android:angle="270" />
-
 </shape>

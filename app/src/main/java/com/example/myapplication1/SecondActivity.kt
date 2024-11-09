@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class SecondActivity : AppCompatActivity() {
@@ -21,14 +22,15 @@ class SecondActivity : AppCompatActivity() {
         val recipientEmail = intent.getStringExtra("RecipientEmail")
         val message = intent.getStringExtra("Message")
 
-        receivedEmail.setText(email)
-        receivedRecipientEmail.setText(recipientEmail)
+        receivedEmail.setText("From: "+email)
+        receivedRecipientEmail.setText("To: "+recipientEmail)
         receivedMessage.setText(message)
 
         clearButton.setOnClickListener {
             receivedEmail.setText("")
             receivedRecipientEmail.setText("")
             receivedMessage.setText("")
+            Toast.makeText(this, "Fields Cleared!", Toast.LENGTH_SHORT).show()
         }
     }
 
